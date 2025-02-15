@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+  <main>
+
+    <div class="container">
+      <h1><%= category %></h1>
+      <% coffees.forEach(coffee=> { %>
+        <article class="card-container">
+          <img class="card-img" src="/img/coffees/<%= coffee.reference %>.png" alt="Image liée au café <%= coffee.name %>">
+          <div class="card-content">
+          <h3><%= coffee.name %></h3>
+          <p><%= coffee.description %></p>
+          <a class="card-link" href="/coffee/<%= coffee.id %>">Découvrir</a>
+          </div>
+        </article>
+        <% }) %>
+
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
