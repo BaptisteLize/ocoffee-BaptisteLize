@@ -7,6 +7,7 @@ import session from "express-session";
 import db from "./app/data/data-client.js";
 
 const app = express();
+app.set("trust proxy", 1);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(import.meta.dirname, "/app/views"));
