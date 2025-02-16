@@ -3,8 +3,9 @@ import express from "express";
 import path from "path";
 import router from "./app/router.js";
 import connectPgSimple from "connect-pg-simple";
+import pg from "pg";
 import session from "express-session";
-import db from "./app/data/data-client.js";
+
 
 const app = express();
 app.set("trust proxy", 1);
@@ -14,9 +15,14 @@ app.set("views", path.join(import.meta.dirname, "views"));
 app.use(express.static(path.join(import.meta.dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
+const pool = new pg.Pool({
+  connectionString: process.env.PG_URL,
+  ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
+});
+
 const pgSession = connectPgSimple(session);
 const store = new pgSession({
-  pool: db,
+  pool: pool,
   tableName: "user_sessions",
   createTableIfMissing: true
 });
@@ -27,7 +33,7 @@ app.use(session({
   resave: false, 
   saveUninitialized: false,
   cookie: {
-    secure: false,
+    secure: process.env.NODE_ENV === "production",
     maxAge: 30 * 24 * 60 * 60 * 1000 // Conservé 30 jour
   } 
 }));
