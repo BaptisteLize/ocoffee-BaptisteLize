@@ -858,7 +858,17 @@ input[type="checkbox"]:checked {
   }
 
   #nav-links:not(.hidden) {
-    right: 2.5rem;;
+    width: 35%;
+    right: 0;
+  }
+
+  #nav-links > li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links-element {
+    width: 100%;
   }
 
   footer > p {
@@ -978,9 +988,14 @@ input[type="checkbox"]:checked {
 
   #nav-links {
   display: flex;
+  align-items: center;
   background-color: inherit;
   gap: 2rem;
   padding: 1rem;
+  }
+
+  #nav-links > li {
+    width: auto;
   }
 
   .nav-links-element {
