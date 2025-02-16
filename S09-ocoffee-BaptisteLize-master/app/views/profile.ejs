@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+  <main>
+
+    <h1 class="margin-h1">Bonjour <%= session.user.username.replace(/\b\w/, x => x.toUpperCase()) %></h1>
+
+    <% if (isValid) { %>
+        <div class="notification-valid">Modification prise en compte</div>
+       <% } else if (isDenied) { %>
+        <div class="notification-denied">Ne peuvent être identiques</div>
+        <% } else %>
+        <div class="form-container">
+          <form class="password-form" action="/profile" method="POST">
+            <h2>Modifier votre mot de passe</h2>
+            <label for="password">
+              <input type="password" name="password" placeholder="Ancien mot de passe" required>
+            </label>
+            <label for="password">
+              <input type="password" name="newPassword" placeholder="Nouveau mot de passe" required>
+            </label>
+            <button>Valider</button>
+          </form>
+        </div>
+      </div>
+
+  </main>
+
+  <%- include('partials/footer') %>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="/js/header.js" defer></script>
+  <script src="/js/slider.js" defer></script>
+  <script src="/js/filter.js" defer></script>
+  <script src="/js/map.js" defer></script>
+  <title>O'Coffee</title>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav-container">
+      <a class="logo-link" href="/"><img class="logo" src="/img/logo.svg" alt="Logo oCoffee">oCoffee</a>
+      <button id="burger-menu" aria-label="Burger Menu">
+        <span class="burger-visual"></span>
+        <span class="burger-visual"></span>
+        <span class="burger-visual"></span>
+      </button>
+      <ul id="nav-links" class="hidden" aria-label="Navigation Links">
+        <% if (session.user && session.user.role==="admin" ) { %>
+          <li><a class="nav-links-element" href="/admin/manage">Gestion - Admin</a></li>
+          <% } else if (session.user && session.user.role==="customer" ) { %>
+            <li><a class="nav-links-element" href="/profile">Profil</a></li>
+            <% } %>
+              <li><a class="nav-links-element" href="/">Accueil</a></li>
+              <li><a class="nav-links-element" href="/catalogue">Catalogue</a></li>
+              <li><a class="nav-links-element" href="/find-us">Nous trouver</a></li>
+              <% if (session.user) { %>
+                <li><a class="nav-links-element" href="/logout">Déconnexion</a></li>
+                <% } else { %>
+                  <li><a class="nav-links-element" href="/login">Connexion</a></li>
+                  <% } %>
+      </ul>
+    </nav>
+  </header>

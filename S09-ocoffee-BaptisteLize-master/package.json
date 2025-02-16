@@ -1,0 +1,36 @@
+{
+  "type": "module",
+  "name": "s09-ocoffee-baptistelize",
+  "version": "1.0.0",
+  "description": "## Information du projet",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Sushi/S09-ocoffee-BaptisteLize.git"
+  },
+  "keywords": [],
+  "author": "BaptisteLize from O'clock Sushi Promo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Sushi/S09-ocoffee-BaptisteLize/issues"
+  },
+  "homepage": "https://github.com/O-clock-Sushi/S09-ocoffee-BaptisteLize#readme",
+  "dependencies": {
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.20.0"
+  }
+}

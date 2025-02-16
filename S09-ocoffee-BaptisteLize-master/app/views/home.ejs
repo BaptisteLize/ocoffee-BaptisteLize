@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+  <main>
+    <section class="container">
+      <h1>L’Art du café, l’expérience locale en plus</h1>
+      <div class="text-section">
+        <p>
+          Chez oCoffee, chaque tasse est une expérience, chaque grain une invitation au voyage. Que vous soyez amateur
+          de café d’exception ou simple curieux, laissez-vous séduire par nos sélections uniques et nos torréfactions
+          soigneusement travaillées. Venez savourer un moment chaleureux dans notre boutique et repartez avec les
+          meilleurs cafés en grains ou moulus, sélectionnés avec passion. Installez-vous, respirez les arômes
+          envoûtants et laissez-nous vous faire découvrir le vrai goût du café.
+        </p>
+        <a class="global-link" href="/about">À propos de nous</a>
+      </div>
+        <img src="/img/home.webp" alt="Plusieurs tasses de café remplies et disposées en rond sur une table">
+    </section>
+
+    <section class="container">
+      <h2>Nouveautés</h2>
+      <div id="news-container">
+        <button id="prev-btn" class="slider-btn">❮</button>
+        <div class="news-slider">
+          <% coffees.forEach(coffee => { %>
+            <article class="card-container">
+              <a class="category-link <%= coffee.category_name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '') %>" href="/category/<%= coffee.category_name %>">
+                <%= coffee.category_name %>
+              </a>
+              <img class="card-img" src="/img/coffees/<%= coffee.reference %>.png" alt="Image du café <%= coffee.name %>">
+              <div class="card-content">
+                <h3><%= coffee.name %></h3>
+                <p><%= coffee.description %></p>
+                <a class="card-link" href="/coffee/<%= coffee.id %>">Découvrir</a>
+              </div>
+            </article>
+          <% }) %>
+        </div>
+        <button id="next-btn" class="slider-btn">❯</button>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
