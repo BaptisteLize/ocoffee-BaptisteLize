@@ -983,6 +983,15 @@ input[type="checkbox"]:checked {
   padding: 1rem;
   }
 
+  .nav-links-element {
+    color:#f5f1e9;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  } 
+
   .nav-links-element:hover {
     color: #fff;
   }
