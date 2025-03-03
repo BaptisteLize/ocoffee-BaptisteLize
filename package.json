@@ -16,15 +16,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/O-clock-Sushi/S09-ocoffee-BaptisteLize.git"
+    "url": "https://github.com/BaptisteLize/ocoffee-BaptisteLize"
   },
   "keywords": [],
   "author": "BaptisteLize from O'clock Sushi Promo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/O-clock-Sushi/S09-ocoffee-BaptisteLize/issues"
+    "url": "https://github.com/BaptisteLize/ocoffee-BaptisteLize/issues"
   },
-  "homepage": "https://github.com/O-clock-Sushi/S09-ocoffee-BaptisteLize#readme",
+  "homepage": "https://github.com/BaptisteLize/ocoffee-BaptisteLize#readme",
   "dependencies": {
     "connect-pg-simple": "^10.0.0",
     "dotenv": "^16.4.7",
